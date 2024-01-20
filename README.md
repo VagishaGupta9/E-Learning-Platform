@@ -15,5 +15,8 @@
 
 # TRY IT HERE
 https://replit.com/@vagishagupta/Nuhi
+- 🌱 Create account on replit.
+- 💬 Fork this repl.
+- 📫 Run and view its deployment.
 
 

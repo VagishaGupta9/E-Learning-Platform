@@ -1,0 +1,242 @@
+<!-- templates/dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Add Bootstrap CDN link -->
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom styles -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .dashboard-container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .side-panel {
+            width: 250px;
+            background-color: #343a40; /* Dark background color for the side panel */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .dashboard-header {
+            background: linear-gradient(45deg, #4f4f4f, #121212, #4f4f4f, #121212);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .card {
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card:hover {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            color: #007bff;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card-text {
+            color: #555;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animation for background gradient */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Remove white background around the logo in the navbar */
+        .navbar {
+            background-color: transparent !important;
+        }
+
+        .navbar-brand {
+            padding: 0; /* Remove padding */
+        }
+
+        .navbar-brand img {
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <a class="navbar-brand" href="">
+            <img src="https://th.bing.com/th/id/R.9eadd93847ae07b8861c5dbae15e1c56?rik=D0KT4GSiCX7j0g&riu=http%3a%2f%2fclipart-library.com%2fimages_k%2fletter-n-transparent%2fletter-n-transparent-4.png&ehk=YC2esd3Emkxt9WIDJoomYUlKMm5Zotymcsf%2fCdCpXjk%3d&risl=&pid=ImgRaw&r=0" alt="N logo">
+             <!-- Added "Dashboard" title here -->
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            
+              
+        </div>
+    </nav>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+
+        <!-- Side Panel -->
+        <div class="side-panel">
+            <h3>Content</h3>
+            <!-- Add links to the side panel --><br>
+            <a href="#" class="btn btn-light" data-toggle="collapse" data-target="#collapseLinks" aria-expanded="false" aria-controls="collapseLinks">
+                Artificial Intelligence Programming Tools 
+            </a>
+            <div class="collapse" id="collapseLinks">
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="{{ url_for('editor') }}">Python Programming Editor</a></li>
+                    <li class="list-group-item"><a href="{{url_for('ai_learning')}}">Learning Resources</a></li>
+                    <li class="list-group-item"><a href="{{url_for('ai_exps')}}">Experiment List</a></li>
+                    <li class="list-group-item"><a href="#">Sample Projects</a></li>
+                    <li class="list-group-item"><a href="#">Mock Tests</a></li>
+                    <!-- Add more links as needed -->
+                </ul>
+            </div>
+
+       <br>
+       <br>
+
+            <a href="#" class="btn btn-light" data-toggle="collapse" data-target="#collapseLinksML" aria-expanded="false" aria-controls="collapseLinksML">
+              Machine Learning
+            </a>
+            <div class="collapse" id="collapseLinksML">
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="#">Learning Resources</a></li>
+                    <li class="list-group-item"><a href="#">Experiment List</a></li>
+                    <li class="list-group-item"><a href="#">Sample Projects</a></li>
+                    <li class="list-group-item"><a href="#">Mock Tests</a></li>
+                    <!-- Add more links as needed -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+
+            <!-- Dashboard Header -->
+            <div class="dashboard-header">
+                <h2>Dashboard</h2>
+                <p>Welcome to your dashboard, {{ username }}!</p>
+                <ul>
+                    <li><strong>Branch:</strong> MTech CSE AI</li>
+                </ul>
+            </div>
+
+            <!-- Learning Cards -->
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Learn Python Programming</h5>
+                    <p class="card-text">Explore the fundamentals of Python programming language.</p>
+                    <a href="{{ url_for('learning_python') }}" class="btn btn-primary">Start Learning</a>
+                </div>
+            </div>
+
+            <!-- Mock Tests Card -->
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Coding Contests</h5>
+                    <p class="card-text">Take coding contests to test your knowledge.</p>
+                    <a href="#" class="btn btn-primary">Start</a>
+                </div>
+            </div>
+
+            <!-- Previous Year Papers Card -->
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Previous Year Papers</h5>
+                    <p class="card-text">Review and solve previous year question papers to enhance your preparation.</p>
+                    <a href="#" class="btn btn-primary">View Papers</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- Add Bootstrap JS and Popper.js CDN links -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

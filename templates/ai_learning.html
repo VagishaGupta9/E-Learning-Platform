@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIPT Learning Resources</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 1em;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        section {
+            margin: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .card-content {
+            display: none;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .dropdown {
+            display: inline-block;
+        }
+    
+        .dropbtn {
+            background-color: #444;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+    
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+    
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+    
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+    
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Artificial Intelligence Programming Tools</h1>
+</header>
+
+<nav>
+    <!-- Add a dropdown menu for categories -->
+    <div class="dropdown">
+        <button class="dropbtn">Index</button>
+        <div class="dropdown-content">
+            <a href="#">Lisp And Prolog</a>
+            <a href="#">Basic Data Structures with Python</a>
+            <a href="#">R Programming</a>
+            <a href="##">Teacher's Notes</a>
+            <!-- Add more categories as needed -->
+        </div>
+    </div>
+</nav>
+
+<section>
+    <div class="card"  onclick="toggleCard(this)">
+        <div class="card-header">
+            <h2>Lisp And Prolog</h2>
+            <span id="toggleIcon1">+</span>
+        </div>
+        <div class="card-content">
+            <p><strong>Lisp (List Processing):</strong></p>
+            <p>Lisp is a programming language known for its unique approach to symbolic computing and list processing. Here are some salient features and syntax:</p>
+    
+            <ul>
+                <li><strong>Features:</strong>
+                    <ul>
+                        <li>Dynamic typing: Variables can hold values of any data type.</li>
+                        <li>Garbage collection: Automatic memory management.</li>
+                        <li>Powerful macro system: Allows for code manipulation and abstraction.</li>
+                        <li>Interactive development: Supports an interactive REPL (Read-Eval-Print Loop).</li>
+                    </ul>
+                </li>
+                <li><strong>Syntax:</strong>
+                    <ul>
+                        <li>Lists: Fundamental data structure; operations are expressed as function calls within parentheses.</li>
+                        <li>Example function call: <code>(+ 1 2)</code> results in 3.</li>
+                        <li>Defining a function: <code>(defun add-two-numbers (a b) (+ a b))</code>.</li>
+                    </ul>
+                </li>
+            </ul>
+    
+            <p><strong>Prolog:</strong></p>
+            <p>Prolog is a logic programming language designed for symbolic reasoning and manipulation. Here are some salient features and syntax:</p>
+    
+            <ul>
+                <li><strong>Features:</strong>
+                    <ul>
+                        <li>Declarative programming: Programs express what should be achieved rather than how to achieve it.</li>
+                        <li>Pattern matching: Powerful unification mechanism for matching facts and rules.</li>
+                        <li>Backtracking: Allows the system to explore multiple solutions.</li>
+                        <li>Extensibility: Easily extend the language through custom predicates and rules.</li>
+                    </ul>
+                </li>
+                <li><strong>Syntax:</strong>
+                    <ul>
+                        <li>Facts: <code>father(john, jack)</code> asserts that John is the father of Jack.</li>
+                        <li>Rules: <code>ancestor(X, Y) :- parent(X, Y)</code> defines a rule for ancestry.</li>
+                        <li>Queries: <code>?- ancestor(john, jack)</code> queries if John is an ancestor of Jack.</li>
+                    </ul>
+                </li>
+            </ul>
+    
+           <ul><strong>NOTES</strong>
+                <li><a href="https://firebasestorage.googleapis.com/v0/b/nuhi-learning.appspot.com/o/Lisp%20Prolog%20notes%20by%20Vagisha%20Gupta.pdf?alt=media&token=a124e949-8da3-4cd5-aed0-ce1748cb5877" target="_blank">Lisp Prolog by Vagisha Gupta</a></li>
+                <li><a href="https://firebasestorage.googleapis.com/v0/b/nuhi-learning.appspot.com/o/Lisp-Prolog%20by%20Prabhdrish%20kaur.pdf?alt=media&token=5e4ffbe7-e391-4b29-8712-b43a23070dea" target="_blank">Lisp and Prolog by Prabhdrisht Kaur</a></li>
+                <!-- Add more PDF files as needed -->
+            </ul>
+            <!--  viewing PDF files -->
+            <section class="pdf-viewer">
+                
+                
+            </section>
+        </div>
+    </div>
+    
+
+    <div class="card"  onclick="toggleCard(this)">
+        <div class="card-header">
+            <h2>Basic Data Structures with Python</h2>
+            <span id="toggleIcon2">+</span>
+        </div>
+        <div class="card-content">
+            <p>.....</p>
+            
+            <!-- Add a section for viewing PDF files -->
+            <section class="pdf-viewer">
+                
+                <embed src="The Science of Happiness and Wellbeing.pdf" type="application/pdf" width="100%" height="600px" />
+            </section>
+        </div>
+    </div>
+    
+    <div class="card"  onclick="toggleCard(this)">
+        <div class="card-header">
+            <h2>R Programming</h2>
+            <span id="toggleIcon3">+</span>
+        </div>
+        <div class="card-content">
+            <p>.....</p>
+            
+            <!-- Add a section for viewing PDF files -->
+            <section class="pdf-viewer">
+                <!-- Replace 'your-pdf-file.pdf' with the actual path to your PDF file -->
+                <embed src="The Science of Happiness and Wellbeing.pdf" type="application/pdf" width="100%" height="600px" />
+            </section>
+        </div>
+    </div>
+    
+    <div class="card"  onclick="toggleCard(this)">
+        <div class="card-header">
+            <h2>Teacher's Notes</h2>
+            <span id="toggleIcon4">+</span>
+        </div>
+        <div class="card-content">
+            <p>.....</p>
+            
+            <!-- Add a section for viewing PDF files -->
+            <section class="pdf-viewer">
+                <!-- Replace 'your-pdf-file.pdf' with the actual path to your PDF file -->
+                <embed src="The Science of Happiness and Wellbeing.pdf" type="application/pdf" width="100%" height="600px" />
+            </section>
+        </div>
+    </div>
+</section>
+
+<footer>
+    &copy; 2023 Nuhi
+</footer>
+
+<script>
+    function toggleCard(card) {
+        const content = card.querySelector('.card-content');
+        const icon = card.querySelector('span');
+
+        if (content.style.display === 'none' || content.style.display === '') {
+            content.style.display = 'block';
+            icon.textContent = '-';
+        } else {
+            content.style.display = 'none';
+            icon.textContent = '+';
+        }
+    }
+
+    // Handle PDF link clicks to display in PDF viewer
+    document.addEventListener('click', function (event) {
+        if (event.target.tagName === 'A' && event.target.getAttribute('href').endsWith('.pdf')) {
+            event.preventDefault();
+            const pdfViewer = card.querySelector('.pdf-viewer');
+            pdfViewer.innerHTML = `<embed src="${event.target.href}" type="application/pdf" width="100%" height="600px" />`;
+        }
+    });
+</script>
+
+</body>
+</html>

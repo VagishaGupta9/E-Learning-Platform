@@ -1,0 +1,136 @@
+<!-- templates/python_editor.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Programming Editor</title>
+    
+    <!-- Add Ace Editor library -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        h2 {
+            color: #007bff;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Set the editor container size */
+        #editor {
+            height: 400px;
+            width: 80%;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style for the output container */
+        #output-container {
+            margin-top: 20px;
+            width: 80%;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #output {
+            white-space: pre-wrap; /* Preserve line breaks */
+            color: #555;
+        }
+
+        button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>Python Programming Editor</h2>
+    
+    <!-- Create a container for the editor -->
+    <div id="editor"></div>
+
+    <!-- Buttons for running and debugging -->
+    <button onclick="runCode()">Run</button>
+    <button onclick="debugCode()">Debug</button>
+
+    <!-- Output container -->
+    <div id="output-container">
+        <strong>Output:</strong>
+        <pre id="output"></pre>
+    </div>
+
+    <script>
+        // Initialize Ace Editor
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/monokai"); // You can choose a different theme
+        editor.session.setMode("ace/mode/python");
+
+        // Function to run the code
+        function runCode() {
+            var code = editor.getValue();
+    
+            // Send the code to the backend for execution (AJAX request)
+            $.ajax({
+                type: "POST",
+                url: "/run",
+                data: { code: code },
+                success: function(response) {
+                    // Display the output
+                    $('#output').text(response.output || response.error || 'No output');
+                },
+                error: function(error) {
+                    console.error(error);
+                }
+            });
+        }
+
+        // Function to debug the code
+        function debugCode() {
+            var code = editor.getValue();
+
+            // Send the code to the backend for debugging (AJAX request)
+            // Implement this part based on your backend setup
+            // Example using jQuery:
+            
+            $.ajax({
+                type: "POST",
+                url: "/debug",
+                data: { code: code },
+                success: function(response) {
+                    // Handle the response from the backend
+                    console.log(response);
+                },
+                error: function(error) {
+                    console.error(error);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

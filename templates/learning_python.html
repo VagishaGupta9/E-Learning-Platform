@@ -1,0 +1,203 @@
+<!-- learning_content.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Programming</title>
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   
+    <style>
+        body {
+            background: linear-gradient(45deg, #000039, #000036);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            
+        }
+        /* Animation for fadeInUp */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animation for background gradient */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 50px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+
+        #content {
+            flex: 2;
+            padding: 20px;
+        }
+
+        #sidebar {
+            flex: 1;
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            position: relative; /* Added position relative */
+        }
+
+        h1 {
+            color: #007bff;
+        }
+        h2 {
+            color: black;
+        }
+        h3{
+            color: red;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        .btn-primary {
+            background-color: #fff;
+            color: #007bff;
+            border: 1px solid #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        textarea {
+            width: 100%;
+            height: 250px;
+            margin-top: 20px;
+            position: sticky; /* Set position to sticky */
+            top: 20px; /* Adjust the top value as needed */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="content">
+            <h1>Python Programming Fundamentals</h1>
+            
+            <p>
+                Welcome to the Python Programming course! In this section, we'll introduce you to the basics
+                of Python syntax and concepts. Python is a versatile and powerful programming language known
+                for its readability and simplicity.
+            </p>
+
+            <h2>Introduction to Python Syntax and Concepts</h2>
+
+            <p>
+                Python uses a clean and straightforward syntax, making it easy for beginners to learn. Here are
+                some key concepts to get you started:
+            </p>
+
+            <ul>
+                <li><strong>Indentation:</strong> Python uses indentation to define blocks of code. Proper indentation is crucial for code readability.</li>
+                <li><strong>Variables:</strong> In Python, you can create variables to store and manipulate data. Python is dynamically typed, meaning you don't need to declare the variable type explicitly.</li>
+                <li><strong>Data Types:</strong> Python supports various data types, including integers, floats, strings, lists, tuples, and more.</li>
+                <li><strong>Control Structures:</strong> Python provides control structures such as loops (for and while) and conditionals (if, elif, else) to control the flow of your program.</li>
+            </ul>
+
+            <h3>Example: Calculate Squares of Numbers</h3>
+
+            <pre>
+<code>
+# This is a simple Python program that calculates the square of numbers in a list
+
+# Define a list of numbers
+numbers = [1, 2, 3, 4, 5]
+
+# Use a for loop to iterate through the list
+for number in numbers:
+    # Calculate the square of each number
+    square = number ** 2
+    
+    # Check if the square is an even or odd number
+    if square % 2 == 0:
+        print(f"The square of {number} is {square}. It is an even number.")
+    else:
+        print(f"The square of {number} is {square}. It is an odd number.")
+        
+</code>
+</pre>
+<a href="{{ url_for('editor') }}" target="_blank" class="btn btn-primary" id="tryYourselfBtn">Try Yourself</a>
+           
+        </div>
+
+        <div id="sidebar">
+            <h2>Course Highlights</h2>
+            <ul>
+                <li>Introduction to Python syntax and concepts</li>
+                <li>Working with variables and data types</li>
+                <li>Control structures: loops and conditionals</li>
+                <li>Functions and modules</li>
+                <li>Handling exceptions</li>
+                <li>File handling</li>
+                <li>OOPs Concept</li>
+                <li>APIs</li>
+                <!-- Add more highlights as needed -->
+            </ul>
+
+            <!-- Added textarea for notes -->
+            <textarea placeholder="Write your notes here..." id="notesTextarea"></textarea>
+        </div>
+    </div>
+
+    <!--js-->
+    <script>
+        // Get the textarea element
+        var notesTextarea = document.getElementById('notesTextarea');
+
+        // Add a scroll event listener to adjust the position of the textarea
+        window.addEventListener('scroll', function() {
+            // Get the current scroll position
+            var scrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+            // Set the top property of the textarea dynamically based on the scroll position
+            notesTextarea.style.top = scrollPosition + 'px';
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

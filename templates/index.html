@@ -1,0 +1,184 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuhi</title>
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   
+    <style>
+        body {
+            background: linear-gradient(45deg, #2E8B57, #2c3e50); /* Updated background colors */
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent horizontal scroll due to gradient overflow */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 5px;
+            background-color: rgba(41, 43, 44, 0.7); /* Updated background transparency */
+            text-align: center;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .navbar {
+            background-color: #007bff; /* Blue color for the navbar */
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        /* Custom styles for Navbar */
+        .navbar {
+            background-color: #007bff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .navbar-brand img {
+            border-radius: 50%;
+        }
+
+        /* Autotyper styles */
+        #autotyper {
+            overflow: hidden;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: 3px;
+            animation: typing 5s steps(40, end), blink-caret 0.75s step-end infinite;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink-caret {
+            from, to {
+                border-color: transparent;
+            }
+            50% {
+                border-color: #fff;
+            }
+        }
+
+        /* Animation for fadeInUp */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animation for background gradient */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        #bottomRightImage {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            max-width: 250px;
+            max-height: 300px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">
+            <img src="https://th.bing.com/th/id/R.9eadd93847ae07b8861c5dbae15e1c56?rik=D0KT4GSiCX7j0g&riu=http%3a%2f%2fclipart-library.com%2fimages_k%2fletter-n-transparent%2fletter-n-transparent-4.png&ehk=YC2esd3Emkxt9WIDJoomYUlKMm5Zotymcsf%2fCdCpXjk%3d&risl=&pid=ImgRaw&r=0" height=50px alt="N Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+           
+        </div>
+    </nav>
+
+    <div class="container"> 
+        <div class="hero-wrapper"> 
+            <div class="hero-text-wrapper">
+                <p class="hi" style="transform: translate(0px, 0px); opacity: 1;"> Hi There I'm </p> 
+                   <div id="autotyper"> <h1 style="transform: translate(0px, 0px); opacity: 1;">Nuhi</h1> </div>
+                    <h3 style="transform: translate(0px, 0px); opacity: 1;">Your partner in learning.
+                        <img src="./AI PT/AI MINI PROJECT/typer.svg" alt="" style="margin-left:.2rem"></h3> 
+                        <p class="info" style="transform: translate(0px, 0px); opacity: 1;">
+                             Log in to access your dashboard and start learning! </p>
+                              <a href="{{url_for('login')}}" class="btn btn-primary" id="loginButton"> <span>Login</span>
+
+      <!-- Image at the bottom left corner -->
+      <img src="https://res.cloudinary.com/dejiabiola/image/upload/v1607804394/envato_2.0/kem-hero.png" id="bottomRightImage"  alt="Bottom Right Image">
+
+    <!--js-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript -->
+    <script>
+        // HOVER EFFECTS
+        document.getElementById('loginButton').addEventListener('mouseover', function() {
+            this.style.backgroundColor = '#0056b3';
+            this.style.borderColor = '#0056b3';
+        });
+
+        document.getElementById('loginButton').addEventListener('mouseout', function() {
+            this.style.backgroundColor = '#007bff';
+            this.style.borderColor = '#007bff';
+        });
+    </script>
+</body>
+</html>

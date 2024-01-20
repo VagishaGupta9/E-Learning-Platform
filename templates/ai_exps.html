@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-PT Experiments Lisr</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/mode/python/python.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: auto;
+            background: linear-gradient(to right, #2E8B57, #2c3e50);
+            transition: background 0.5s ease; /* Added a background color transition */
+        }
+
+        .accordion-container {
+            width: 1000px;
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.5s ease; /* Added a background color transition */
+        }
+
+        .accordion-title {
+            font-size: 28px; /* Increased font size */
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .accordion {
+            width: 100%;
+        }
+
+        .accordion-item {
+            margin-bottom: 10px;
+            background-color: #e0e0e0; /* Changed card background color */
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* Added overflow property */
+            transition: background-color 0.3s ease; /* Added a background color transition */
+        }
+
+        .accordion-header {
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease; /* Added a background color transition */
+        }
+        .accordion-header:hover {
+            background-color: #297fb8;
+        }
+
+
+
+        .accordion-content {
+            padding: 10px;
+            display: none;
+        }
+
+        .code-editor {
+            width: 100%;
+            height: 200px;
+        }
+
+        .run-button {
+            background-color: #27ae60;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .output {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+       
+    </style>
+</head>
+<body>
+
+    <div class="accordion-container">
+        <div class="accordion-title">AI-PT Experiments List</div>
+
+        <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleContent(1)">
+                    <span>WAP to implement Factorial and Fibonacci Series without using recursion</span>
+                    <span id="icon1">➕</span>
+                </div>
+                <div class="accordion-content" id="content1">
+                    <textarea class="code-editor" id="codeEditor1">
+#Factorial
+def factorial(n):
+    if n<0:
+        return None
+    result = 1
+    for i in range(1,n+1):
+        result *= i
+    return result
+num = 10
+factorial_result = factorial(num)
+print("Factorial of 10 is: ", factorial_result)
+
+#Fibonacci
+def series(n):
+    print("series is : ")
+    for i in range(n):
+        print(i, end=" ")
+n = 10
+result = series(n)
+
+                        
+                        
+                    </textarea>
+                    <button class="run-button" onclick="runCode(1)">Run Code</button>
+                    <div class="output" id="output1"></div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleContent(2)">
+                    <span>WAP to demonstrate an arithmetic calculator using lambda function</span>
+                    <span id="icon2">➕</span>
+                </div>
+                <div class="accordion-content" id="content2">
+                    <textarea class="code-editor" id="codeEditor2">
+# Define lambda functions for arithmetic operations
+addition = lambda x, y: x + y
+subtraction = lambda x, y: x - y
+multiplication = lambda x, y: x * y
+division = lambda x, y: x / y if y != 0 else "Cannot divide by zero"
+
+# Main calculator function
+def calculator(operation, x, y):
+    if operation == 'add':
+        return addition(x, y)
+    elif operation == 'subtract':
+        return subtraction(x, y)
+    elif operation == 'multiply':
+        return multiplication(x, y)
+    elif operation == 'divide':
+        return division(x, y)
+    else:
+        return "Invalid operation"
+
+# Given inputs
+operation = 'add'  #You can change operation and check the other values.
+num1 = 10
+num2 = 5
+
+# Perform calculation
+result = calculator(operation, num1, num2)
+
+# Display the result
+print(f"Result of {operation}({num1}, {num2}): {result}")
+
+
+
+                    </textarea>
+                    <button class="run-button" onclick="runCode(2)">Run Code</button>
+                    <div class="output" id="output2"></div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleContent(3)">
+                    <span>Write a Boolean calculator and pass 3 arguments (a,b,c) and showcase logical AND, OR, NOT operations.</span>
+                    <span id="icon3">➕</span>
+                </div>
+                <div class="accordion-content" id="content3">
+                    <textarea class="code-editor" id="codeEditor3">
+# Define lambda functions for logical operations
+#Check for other combinations as well.
+logical_and = lambda a, b, c: a and b and c
+logical_or = lambda a, b, c: a or b or c
+logical_not = lambda a: not a
+
+# Given numeric inputs. You can check for other values as well.
+a = 5
+b = 0
+c = 10
+
+# Perform logical operations
+result_and = logical_and(a, b, c)
+result_or = logical_or(a, b, c)
+result_not_a = logical_not(a)
+result_not_b = logical_not(b)
+result_not_c = logical_not(c)
+
+# Display the results
+print(f"Logical AND: {a} AND {b} AND {c} = {result_and}")
+print(f"Logical OR: {a} OR {b} OR {c} = {result_or}")
+print(f"Logical NOT {a} = {result_not_a}")
+print(f"Logical NOT {b} = {result_not_b}")
+print(f"Logical NOT {c} = {result_not_c}")
+
+
+
+                    </textarea>
+                    <button class="run-button" onclick="runCode(3)">Run Code</button>
+                    <div class="output" id="output3"></div>
+                </div>
+            </div>
+
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleContent(4)">
+                    <span>WAP to count the number of lines, words and characters in a text file in python.</span>
+                    <span id="icon4">➕</span>
+                </div>
+                <div class="accordion-content" id="content4">
+                    <p> <strong>#FILE HANDLING </strong><br>
+                        #create a file "mtech.txt" and copy paste it's path <br>
+                        fo = open('C:\\Users\\YOUR_PATH\\mtech.txt','w') <br>
+                        fo.write('Hello.\n') <br>
+                        fo.write ('How are you?')<br>
+                        fo.close() <br>
+                        print("written successfully") <br>
+                        
+                        #reading number of lines <br>
+                        with open("C:\\Users\\YOUR_PATH\\mtech.txt",'r') as fp: <br>
+                            count = len(fp.readlines()) <br>
+                        print(count) <br>
+                        
+                        #reading number of characters <br>
+                        with open("C:\\Users\\YOUR_PATH\\mtech.txt",'r') as fp: <br>
+                            data  = len(fp.read()) <br>
+                        print(data) <br>
+                        
+                        #Directories <br>
+                        import os <br>
+                        os.mkdir("C:\\Users\\YOUR_PATH\\new_dir") <br>
+                        print(os.getcwd())</p>
+                </div>
+            </div>
+
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleContent(5)">
+                    <span>WAP to show basic functionalities of numpy.</span>
+                    <span id="icon5">➕</span>
+                </div>
+                <div class="accordion-content" id="content5">
+                    <textarea class="code-editor" id="codeEditor5">
+#NUMPY
+import numpy as np
+
+#sum
+print("--SUM USING NUMPY--")
+arr1 = np.array([1,2,3])
+arr2 = np.array([3,4,5])
+total = np.sum([arr1 + arr2])
+print(total)
+
+#reshape
+print("--RESHAPE--")
+arr = np.array([[1,2,3,6],
+        [4,5,6,8],
+        [7,8,9,10]])
+new_arr = arr.reshape([2,2,3])
+print(new_arr)
+
+np.random.seed(seed = 1234)
+
+#scalar
+print("--SCALAR--")
+x= np.array(6)
+print(x.shape)
+print(x.ndim)
+print(x)
+print(x.size)
+print(x.dtype)
+
+#matrix
+print("--MATRIX REPRESENTATION--")
+print(np.zeros((2,2)))
+print(np.eye((2)))
+print(np.ones((1,1)))
+print(np.random.random((1,1)))
+                    </textarea>
+                    <button class="run-button" onclick="runCode(5)">Run Code</button>
+                    <div class="output" id="output5"></div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleContent(6)">
+                    <span>WAP to show basic functionalities of pandas.</span>
+                    <span id="icon6">➕</span>
+                </div>
+                <div class="accordion-content" id="content6">
+                    <textarea class="code-editor" id="codeEditor6">
+#importing pandas library
+import pandas as pd
+
+#creating dataframe
+data = {'apple' : [3,2,1,0], 'oranges' : [0,3,7,10]}
+df = pd.DataFrame(data)
+print("Dataframe is:")
+print(df)
+
+#adding index/columns in data
+df = pd.DataFrame(data,  index = ['Ahmad', 'Ali', 'Aditi','Rashid'])
+print("New dataframe is :")
+print(df)
+
+#Using orient keyword
+df = pd.DataFrame.from_dict(data, orient = 'columns' )
+print("Orient keyword is imported through from_dict:")
+print(df)
+
+d = {'one':pd.Series([1,2,3],   index=['a','b','c']),
+     'two':pd.Series([1,2,3,4], index=['a','b','c','d'])
+    }
+df = pd.DataFrame(d)
+# Adding a new column to an existing DataFrame object
+# with column label by passing new series
+print("Adding a new column by passing as Series:")
+df['three'] = pd.Series([10,20,30],index=['a','b','c'])
+print(df)
+print("Adding a column using an existing columns in DataFrame:")
+df['four'] = df['one']+df['three']
+print(df)
+
+
+                    </textarea>
+                    <button class="run-button" onclick="runCode(6)">Run Code</button>
+                    <div class="output" id="output6"></div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleContent(7)">
+                    <span>WAP to show basic functionalities of seaborn</span>
+                    <span id="icon7">➕</span>
+                </div>
+                <div class="accordion-content" id="content7">
+                    <textarea class="code-editor" id="codeEditor7">
+#import seaborn and matplotlib library
+#as of now run the code in google colaboratory.
+#https://colab.research.google.com/
+import seaborn as sns
+import matplotlib.pyplot as plt
+# Sample data
+data = sns.load_dataset("iris")
+
+# Create a scatter plot
+sns.scatterplot(x="sepal_width", y="sepal_length", hue="species", data=data)
+
+# Show the plot
+plt.title("Scatter Plot using Seaborn")
+plt.show()
+                    </textarea>
+                    <button class="run-button" onclick="runCode(7)">Run Code</button>
+                    <div class="output" id="output7">
+                    <!--<div id="graph-container"></div>-->
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleContent(8)">
+                    <span>WAP to show basic functionalities of pytorch.</span>
+                    <span id="icon8">➕</span>
+                </div>
+                <div class="accordion-content" id="content8">
+                    <textarea class="code-editor" id="codeEditor8">
+import torch
+# Get cpu, gpu or mps device for training.
+
+#Directly from data
+data = [[1, 2],[3, 4]]
+x_data = torch.tensor(data)
+print("x_data : ",x_data)
+
+#Standard numpy-like indexing and slicing:
+tensor = torch.ones(4, 4)
+print(f"First row: {tensor[0]}")
+print(f"First column: {tensor[:, 0]}")
+tensor[:,1] = 0
+print(tensor)
+                    </textarea>
+                    <button class="run-button" onclick="runCode(8)">Run Code</button>
+                    <div class="output" id="output8">
+
+                    </div>
+                </div>
+            </div>
+
+
+            
+            <!-- Add more accordion items as needed -->
+
+        </div>
+    </div>
+
+    <script>
+        var codeEditors = {};
+
+        function toggleContent(id) {
+            var content = document.getElementById("content" + id);
+            var icon = document.getElementById("icon" + id);
+
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                icon.innerHTML = "➕";
+            } else {
+                content.style.display = "block";
+                icon.innerHTML = "➖";
+
+                if (!codeEditors[id]) {
+                    codeEditors[id] = CodeMirror.fromTextArea(document.getElementById("codeEditor" + id), {
+                        mode: "python",
+                        lineNumbers: true
+                    });
+                }
+            }
+        }
+
+        function runCode(id) {
+            var code = codeEditors[id].getValue();
+        
+            $.ajax({
+                type: "POST",
+                url: "/run",
+                data: { code: code },
+                success: function(response) {
+                    // Display the output
+                    document.getElementById("output" + id).innerText = response.output || 'No output';
+
+
+                   
+                    
+                },
+                error: function(error) {
+                    console.error(error);
+                }
+            });
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</body>
+</html>
